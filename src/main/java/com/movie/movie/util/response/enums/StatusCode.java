@@ -20,7 +20,40 @@ public enum StatusCode {
 	 */
 	OK(HttpStatus.OK, HttpStatus.OK.value(), "OK", "OK MESSAGE"),
 
-	INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, HttpStatus.INTERNAL_SERVER_ERROR.value(), "Internal Server Error", "Internal Server Error");
+	/**
+	 * 서버 내부 에러
+	 */
+	INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, HttpStatus.INTERNAL_SERVER_ERROR.value(), "Internal Server Error", "Internal Server Error"),
+
+	/**
+	 * 리소스가 성공적으로 생성됨
+	 */
+	CREATED(HttpStatus.CREATED, HttpStatus.CREATED.value(), "Created", "Resource successfully created"),
+
+	/**
+	 * 잘못된 요청
+	 */
+	BAD_REQUEST(HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.value(), "Bad Request", "Invalid request"),
+
+	/**
+	 * 인증 필요
+	 */
+	UNAUTHORIZED(HttpStatus.UNAUTHORIZED, HttpStatus.UNAUTHORIZED.value(), "Unauthorized", "Authentication required"),
+
+	/**
+	 * 권한 없음
+	 */
+	FORBIDDEN(HttpStatus.FORBIDDEN, HttpStatus.FORBIDDEN.value(), "Forbidden", "Access denied"),
+
+	/**
+	 * 리소스를 찾을 수 없음
+	 */
+	NOT_FOUND(HttpStatus.NOT_FOUND, HttpStatus.NOT_FOUND.value(), "Not Found", "Resource not found"),
+
+	/**
+	 * 요청 충돌
+	 */
+	CONFLICT(HttpStatus.CONFLICT, HttpStatus.CONFLICT.value(), "Conflict", "Request conflict");
 
 	/**
 	 * HTTP 상태 코드 (Spring의 HttpStatus)

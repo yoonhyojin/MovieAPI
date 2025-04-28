@@ -19,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 /**
- *
+ * RestTemplate 을 통해 HTTP 통신을 할 수 있게 하는 Util Class
  */
 @Component("RestTemplateUtil")
 @Slf4j
@@ -28,7 +28,7 @@ public class RestTemplateUtil {
 	/**
 	 * 파라미터 없는 Get Connection
 	 * @param URL		Connection Url
-	 * @param clazz		결과로 맵필할 Class
+	 * @param clazz		맵핑 대상 Class
 	 * @return			API 호출 결과
 	 * @param <T>
 	 */
@@ -97,7 +97,6 @@ public class RestTemplateUtil {
 	}
 
 	// 이하 private
-
 	/**
 	 * Header Setting
 	 * @return

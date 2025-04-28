@@ -1,6 +1,7 @@
 package com.movie.movie.repository;
 
 import com.movie.movie.entity.MemberTest;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -14,6 +15,6 @@ public interface TestRepository extends JpaRepository<MemberTest, Long> {
 	 * @param memberId MEMBER_ID
 	 * @return 조회 결과값
 	 */
-	MemberTest findByMemberId(Long memberId);
+	Optional<MemberTest> findByMemberId(Long memberId);
 
 }

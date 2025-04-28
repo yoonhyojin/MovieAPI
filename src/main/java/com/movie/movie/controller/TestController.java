@@ -53,12 +53,12 @@ public class TestController {
 		// 1. 회원조회
 		MemberTest memberTest = testService.findByMemberId(Long.valueOf(memberId));
 
-		log.info("getMember - memberTest: {}", memberTest.toString());
-
 		TestDto testDto = null;
 
 		// 2. 조회한 Entity 결과 값을 만들어주기 위해 Dto 로 변환
 		if (memberTest != null) {
+			log.info("getMember - memberTest: {}", memberTest.toString());
+
 			testDto = TestDto.builder()
 				.memberId(memberTest.getMemberId())
 				.userId(memberTest.getUserId())
@@ -67,6 +67,8 @@ public class TestController {
 				.build();
 		} else {
 			// 데이터가 없는 경우
+			// 보통 단건 조회의 경우 404 NotFound, 다건 조회의 경우 200 Status 에 결과는 빈 리스트로
+			throw new CommonException(StatusCode.NOT_FOUND);
 		}
 
 		return new CommonResponse<>(StatusCode.OK, testDto, null);

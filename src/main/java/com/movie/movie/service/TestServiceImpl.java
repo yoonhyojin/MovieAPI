@@ -21,6 +21,6 @@ public class TestServiceImpl implements TestService {
 	 */
 	@Override
 	public MemberTest findByMemberId(Long memberId) {
-		return testRepository.getReferenceById(memberId);
+		return testRepository.findByMemberId(memberId).orElse(null);
 	}
 }

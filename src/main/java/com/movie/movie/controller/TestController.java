@@ -1,17 +1,22 @@
 package com.movie.movie.controller;
 
+import com.movie.movie.dto.ParseTestDto;
 import com.movie.movie.dto.TestDto;
 import com.movie.movie.entity.MemberTest;
 import com.movie.movie.service.TestService;
+import com.movie.movie.util.connection.RestTemplateUtil;
 import com.movie.movie.util.exception.CommonException;
 import com.movie.movie.util.response.CommonResponse;
 import com.movie.movie.util.response.enums.StatusCode;
+import java.util.HashMap;
+import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * 참고용 Controller Layer
@@ -23,6 +28,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
 	private final TestService testService;
+
+	private final RestTemplateUtil restTemplateUtil;
 
 	/**
 	 * Health Chk - Success
@@ -73,5 +80,22 @@ public class TestController {
 			// 보통 단건 조회의 경우 404 NotFound, 다건 조회의 경우 200 Status 에 결과는 빈 리스트로 담에서 리턴해준다.
 			return new CommonResponse<>(StatusCode.NOT_FOUND, null, null);
 		}
+	}
+
+	/**
+	 * Test Sample - RestTemplateUtil 을 이용한 API 호출 + Data Binding
+	 * @param userId	조회 대상 USERID
+	 * @return	처리 결과
+	 */
+	@GetMapping("/parsing/{userId}")
+	public CommonResponse<ParseTestDto> parsing(@PathVariable String userId) {
+		log.info("parsing userId: {}", userId);
+
+		final String URL = "https://jsonplaceholder.typicode.com/posts/" + userId;
+
+		// 1. HTTP GET 방식 호출
+		ParseTestDto parseTestDto = restTemplateUtil.getConnection(URL, ParseTestDto.class);
+
+		return new CommonResponse<>(StatusCode.OK, parseTestDto, null);
 	}
 }

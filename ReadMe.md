@@ -22,9 +22,9 @@
 - JDK 17
 - Embedded Tomcat
 - H2 DB (In-Memory)
-- JSP (TBD)
-- JavaScript (TBD)
-- Jquery (TBD)
+- JSP (추후 진행)
+- JavaScript (추후 진행)
+- Jquery (추후 진행)
 - JPA (or Hibernate)
 - Logback
 - API 사용:  https://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do
@@ -57,31 +57,6 @@
     - 리스트 조회 (일별, 주간/주말 박스오피스)
     - 단일 영화 정보 조회 (영화 상세정보)
     - 영화 상세정보에서 영화사, 영화인 정보 클릭시 해당 영화사, 영화인 상세정보 보여주기
-
----
-
-# 3. 필요한 정보 (내가 만들기)
-
-- API KEY: 86a5ec6ca4fbf722566f9f331b25db7e
-- Logback 설정하기: logback-spring.xml
-- 공통 응답
-
-  com.movie.movie.util.advice.*
-
-  com.movie.movie.util.exception.*
-
-  com.movie.movie.util.response.*
-
-- 공통 RestTemplate
-- 쿼리 파일
-- Back 단 Sample 파일
-- Test 가능한 JUnit5 등등..
-- JSP( 추후 진행)
-- H2 DB 접속 정보
-
-  서버 실행하고 [http://localhost:81/h2](http://localhost:81/h2-console) 접속
-
-  JDBC URL 입력: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
 
 ---
 

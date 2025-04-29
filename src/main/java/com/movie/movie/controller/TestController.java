@@ -26,11 +26,12 @@ public class TestController {
 
 	/**
 	 * Health Chk - Success
-	 * @return
+	 * @return 처리 결과
 	 */
 	@GetMapping	("/success")
 	public CommonResponse<String> success() {
-		return new CommonResponse(StatusCode.OK, "SUCCESS", null);
+		// 처리결과가 정상인 경우는 StatusCode.OK (200 OK), 처리 결과, null 로 값을 반환처리 해준다.
+		return new CommonResponse<>(StatusCode.OK, "SUCCESS", null);
 	}
 
 	/**
@@ -38,13 +39,15 @@ public class TestController {
 	 */
 	@GetMapping("/fail")
 	public void fail() {
+		// 처리중 Exception 이 발생하면 CommonException 에 Error Status Code 를 담아서 리턴해준다.
+		// 각 상태에 대한 처리는 StatusCode.java Enum 참고
 		throw new CommonException(StatusCode.INTERNAL_SERVER_ERROR);
 	}
 
 	/**
 	 * Test Sample - 회원 정보 조회
-	 * @param memberId
-	 * @return
+	 * @param memberId	조회 대상 MEMBER ID
+	 * @return 처리 결과
 	 */
 	@GetMapping("/{memberId}")
 	public CommonResponse<TestDto> getMember(@PathVariable String memberId) {
@@ -53,24 +56,22 @@ public class TestController {
 		// 1. 회원조회
 		MemberTest memberTest = testService.findByMemberId(Long.valueOf(memberId));
 
-		TestDto testDto = null;
-
 		// 2. 조회한 Entity 결과 값을 만들어주기 위해 Dto 로 변환
 		if (memberTest != null) {
 			log.info("getMember - memberTest: {}", memberTest.toString());
 
-			testDto = TestDto.builder()
+			TestDto testDto = TestDto.builder()
 				.memberId(memberTest.getMemberId())
 				.userId(memberTest.getUserId())
 				.password(memberTest.getPassword())
 				.nickName(memberTest.getNickName())
 				.build();
+
+			return new CommonResponse<>(StatusCode.OK, testDto, null);
 		} else {
 			// 데이터가 없는 경우
-			// 보통 단건 조회의 경우 404 NotFound, 다건 조회의 경우 200 Status 에 결과는 빈 리스트로
-			throw new CommonException(StatusCode.NOT_FOUND);
+			// 보통 단건 조회의 경우 404 NotFound, 다건 조회의 경우 200 Status 에 결과는 빈 리스트로 담에서 리턴해준다.
+			return new CommonResponse<>(StatusCode.NOT_FOUND, null, null);
 		}
-
-		return new CommonResponse<>(StatusCode.OK, testDto, null);
 	}
 }

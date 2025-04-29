@@ -52,7 +52,7 @@ public class TestController {
 	}
 
 	/**
-	 * Test Sample - 회원 정보 조회
+	 * Sample - 회원 정보 조회
 	 * @param memberId	조회 대상 MEMBER ID
 	 * @return 처리 결과
 	 */
@@ -83,7 +83,7 @@ public class TestController {
 	}
 
 	/**
-	 * Test Sample - RestTemplateUtil 을 이용한 API 호출 + Data Binding
+	 * Sample - RestTemplateUtil 을 이용한 API 호출 + Data Binding
 	 * @param userId	조회 대상 USERID
 	 * @return	처리 결과
 	 */

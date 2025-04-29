@@ -34,7 +34,7 @@
 
 # 2. 과제 조건
 
-TDB 는 진행하지 말 것!
+추후 진행은 진행하지 말 것!
 
 1. API 호출 & 데이터 조회
     - RestTemplate 또는 WebClient을 사용하여 OpenAPI 호출
@@ -48,9 +48,9 @@ TDB 는 진행하지 말 것!
     - 영화 상세정보 조회 API
     - 영화사 정보, 영화사 상세정보 조회 API
     - 영화인 정보, 영화인 상세정보 조회 API
-4. 테스트 코드 작성 (TDB)
+4. 테스트 코드 작성 (추후 진행)
     - JUnit5 를 이용한 단위 테스트 및 API 호출 결과 검증
-5. 화면 개발 (TDB)
+5. 화면 개발 (추후 진행)
 
    RestAPI 개발 진행 일정보고 진행 여부 생각 ⇒ 각 RestfulAPI 에 대한 화면
 
@@ -76,7 +76,7 @@ TDB 는 진행하지 말 것!
 - 쿼리 파일
 - Back 단 Sample 파일
 - Test 가능한 JUnit5 등등..
-- JSP( TDB)
+- JSP( 추후 진행)
 - H2 DB 접속 정보
 
   서버 실행하고 [http://localhost:81/h2](http://localhost:81/h2-console) 접속
@@ -164,6 +164,7 @@ TDB 는 진행하지 말 것!
 
 7. 기타 DateUtil, StringUtil 등 Util 성 클래스가 필요하면 util 패키지 하위에 생성
 8. git branch 는 본인 이니셜 branch 사용
-9. A
+9. 반드시 소스 작업 전에는 Pull & Branch Merge , 작업 후에는 Commit & Push 진행
+10. A
 
 주의 사항은 계속 추가 작성 예정

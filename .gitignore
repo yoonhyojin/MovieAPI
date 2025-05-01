@@ -38,3 +38,8 @@ out/
 
 ### ETC ###
 /LOG_PATH_IS_UNDEFINED/
+
+# logs 폴더 내용은 무시
+/logs/*
+# 하지만 logs 폴더 자체는 추적
+!logs/

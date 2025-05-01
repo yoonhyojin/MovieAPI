@@ -112,7 +112,7 @@
 
 2. Controller Layer 에서 결과 값 반환할 경우 CommonResponse 사용해서 값 반환, 에러가 발생하는 경우 CommonException 반환
 
-   참고: com.movie.movie.controller.TestController.java
+   참고: com.movie.movie.sample.controller.TestController.java
 
 3. 외부 API 호출 시 RestTemplate 사용
 

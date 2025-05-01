@@ -1,6 +1,6 @@
-package com.movie.movie.repository;
+package com.movie.movie.sample.repository;
 
-import com.movie.movie.entity.MemberTest;
+import com.movie.movie.sample.entity.MemberTest;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 

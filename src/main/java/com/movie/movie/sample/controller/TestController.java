@@ -1,22 +1,19 @@
-package com.movie.movie.controller;
+package com.movie.movie.sample.controller;
 
-import com.movie.movie.dto.ParseTestDto;
-import com.movie.movie.dto.TestDto;
-import com.movie.movie.entity.MemberTest;
-import com.movie.movie.service.TestService;
+import com.movie.movie.sample.dto.ParseTestDto;
+import com.movie.movie.sample.dto.TestDto;
+import com.movie.movie.sample.entity.MemberTest;
+import com.movie.movie.sample.service.TestService;
 import com.movie.movie.util.connection.RestTemplateUtil;
 import com.movie.movie.util.exception.CommonException;
 import com.movie.movie.util.response.CommonResponse;
 import com.movie.movie.util.response.enums.StatusCode;
-import java.util.HashMap;
-import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * 참고용 Controller Layer

@@ -1,7 +1,8 @@
-package com.movie.movie.service;
+package com.movie.movie.sample.service.impl;
 
-import com.movie.movie.entity.MemberTest;
-import com.movie.movie.repository.TestRepository;
+import com.movie.movie.sample.entity.MemberTest;
+import com.movie.movie.sample.repository.TestRepository;
+import com.movie.movie.sample.service.TestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

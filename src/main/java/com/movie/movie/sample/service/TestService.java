@@ -1,6 +1,6 @@
-package com.movie.movie.service;
+package com.movie.movie.sample.service;
 
-import com.movie.movie.entity.MemberTest;
+import com.movie.movie.sample.entity.MemberTest;
 
 /**
  * 참고용 Service Layer

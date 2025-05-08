@@ -1,4 +1,4 @@
-package com.movie.movie.dailyBoxOffice.dto;
+package com.movie.movie.dailyBoxOffice.entity;
 
 import com.movie.movie.movie.entity.Movie;
 import jakarta.persistence.Column;
@@ -13,7 +13,6 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.LocalDate;
-import java.util.Date;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

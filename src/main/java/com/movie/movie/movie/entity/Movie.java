@@ -1,14 +1,12 @@
 package com.movie.movie.movie.entity;
 
-import com.movie.movie.dailyBoxOffice.dto.DailyBoxOffice;
+import com.movie.movie.dailyBoxOffice.entity.DailyBoxOffice;
 import com.movie.movie.weeklyBoxOffice.entity.WeeklyBoxOffice;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
 import java.util.Set;

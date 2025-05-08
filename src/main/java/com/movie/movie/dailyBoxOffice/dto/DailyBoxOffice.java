@@ -1,0 +1,50 @@
+package com.movie.movie.dailyBoxOffice.dto;
+
+import com.movie.movie.movie.entity.Movie;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.time.LocalDate;
+import java.util.Date;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@Entity
+@Table(name = "DAILY_BOX_OFFICE")
+@Getter
+@Setter
+@NoArgsConstructor
+public class DailyBoxOffice {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "DAILYBOXOFFICE_ID")
+    private Integer dailyBoxOfficeId;
+
+    @Column(name = "MOVIE_CD")
+    private String movieCd;
+
+    @Column(name = "TARGET_DT")
+    private LocalDate targetDt;
+
+    @Column(name = "RANK")
+    private Integer rank;
+
+    @Column(name = "AUDIENCE")
+    private BigInteger audience;
+
+    @Column(name = "SALES")
+    private BigDecimal sales;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "MOVIE_CD", insertable = false, updatable = false)
+    private Movie movie;
+
+}

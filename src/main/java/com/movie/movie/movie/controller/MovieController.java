@@ -1,4 +1,4 @@
-package com.movie.movie.dailyBoxOffice;
+package com.movie.movie.movie.controller;
 
 public class MovieController {
 
